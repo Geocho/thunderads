@@ -75,6 +75,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:24px 52px;display:fl
 
 /* ── CHAPTER BLOCKS ── */
 .ch{max-width:1280px;margin:0 auto;padding:100px 60px;display:grid;grid-template-columns:200px 1fr;gap:80px;border-bottom:1px solid var(--line);position:relative;}
+.ch.has-img{grid-template-columns:200px 1fr 420px;}
+.chImg{position:relative;overflow:hidden;align-self:stretch;min-height:400px;}
+.chImg img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.85);transition:filter .4s;}
+.chImg:hover img{filter:brightness(1);}
+.chImg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(8,8,12,.35) 0%,transparent 60%);pointer-events:none;}
 #ch-brief{background:radial-gradient(ellipse 55% 80% at 88% 8%, #1e1c2e 0%, transparent 60%),radial-gradient(ellipse 40% 50% at 10% 90%, #0d0c14 0%, transparent 55%),#08080c;}
 #ch-approach{background:radial-gradient(ellipse 60% 70% at 85% 10%, #231408 0%, transparent 60%),radial-gradient(ellipse 35% 45% at 5% 85%, #100a04 0%, transparent 55%),#08080c;}
 #ch-deliver{background:radial-gradient(ellipse 50% 65% at 90% 5%, #0c1420 0%, transparent 55%),radial-gradient(ellipse 30% 40% at 8% 92%, #08080f 0%, transparent 50%),#08080c;}
@@ -181,6 +186,11 @@ footer p{font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.18);text-tr
 .reveal-d2{transition-delay:.2s;}
 
 @keyframes scrollX{0%{transform:translateX(0);}100%{transform:translateX(var(--hw,-50%))}}
+
+@media(max-width:1100px){
+  .ch.has-img{grid-template-columns:200px 1fr;}
+  .chImg{display:none;}
+}
 </style>
 </head>
 <body>
@@ -235,13 +245,14 @@ footer p{font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.18);text-tr
 </section>
 
 <!-- THE BRIEF -->
-<div class="ch reveal" id="ch-brief">
+<div class="ch has-img reveal" id="ch-brief">
   <div class="chLbl">The Brief</div>
   <div>
     <h2 class="chTi">A forum about <em>the future</em> deserved coverage that looked like it.</h2>
     <p class="chP">Mastercard's annual Innovation Forum is the moment the brand gathers leaders from Greece, Cyprus, and Malta and speaks openly about what's next. In 2025 the event moved to Piraeus 260, scaled up to 450 guests, and added live feed requirements projected on screen during the event itself.</p>
     <p class="chP">The brief from agency MSPS was clear on the surface: film crew, photography, vision mixing, a same-day social cut, and a highlight reel within three days. <strong>The real brief was unstated: make Mastercard look as innovative as it claims to be.</strong></p>
   </div>
+  <div class="chImg"><img src="mc-quote-01.jpg" alt=""></div>
 </div>
 
 <!-- THE PROBLEM -->
@@ -255,7 +266,7 @@ footer p{font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.18);text-tr
 </section>
 
 <!-- THE APPROACH -->
-<div class="ch reveal" id="ch-approach">
+<div class="ch has-img reveal" id="ch-approach">
   <div class="chLbl">The Approach</div>
   <div>
     <h2 class="chTi">Cinematic thinking.<br><em>Social-first execution.</em></h2>
@@ -268,11 +279,13 @@ footer p{font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.18);text-tr
       <div class="step"><span class="stepN">05</span><div><div class="stepT">A complete social content system</div><div class="stepB">Nine speaker campaigns with tailored copy for Meta, LinkedIn, and YouTube. Each formatted for its platform. Each carrying the brand's voice without repeating it.</div></div></div>
     </div>
   </div>
+  <div class="chImg"><img src="mc-quote-03.jpg" alt=""></div>
 </div>
 
 <!-- THE VISION QUOTE -->
 <section class="bgS reveal grained" id="s-vision">
   <div class="ov" style="background:linear-gradient(255deg,rgba(8,8,12,.97) 0%,rgba(8,8,12,.55) 50%,rgba(8,8,12,.1) 100%);"></div>
+  <img src="mc-quote-05.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.18;z-index:0;">
   <div class="cnt rgt">
     <span class="lbl">The Vision</span>
     <h2><em>"Not just coverage.</em><br>Images that tell a story<br>and give the event<br>life beyond the day."</h2>
@@ -314,7 +327,7 @@ footer p{font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.18);text-tr
 </div>
 
 <!-- DELIVERABLES -->
-<div class="ch reveal" id="ch-deliver">
+<div class="ch has-img reveal" id="ch-deliver">
   <div class="chLbl">Deliverables</div>
   <div>
     <h2 class="chTi">Everything delivered.<br><em>Nothing templated.</em></h2>
@@ -333,6 +346,7 @@ footer p{font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.18);text-tr
       <div class="st"><p class="stN">2</p><p class="stL">Films produced</p></div>
     </div>
   </div>
+  <div class="chImg"><img src="mc-quote-07.jpg" alt=""></div>
 </div>
 
 <!-- THE FILMS -->
