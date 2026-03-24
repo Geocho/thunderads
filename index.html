@@ -46,14 +46,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:24px 52px;display:fl
 
 /* ── HERO ── */
 #hero{position:relative;width:100%;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;}
-.hBg{
-  position:absolute;inset:0;
-  background-image:url('mc-hero-01.jpg');
-  background-size:cover;
-  background-position:center 30%;
-  background-repeat:no-repeat;
+.hBg{position:absolute;inset:0;background:#08080c;}
+.hVideoBg{
+  position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;
 }
-.hGrad{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,12,1) 0%,rgba(8,8,12,.65) 38%,rgba(8,8,12,0) 65%,rgba(8,8,12,.35) 100%);z-index:3;}
+.hVideoBg video{
+  position:absolute;
+  top:50%;left:50%;
+  width:177.78vh;
+  height:100vh;
+  min-width:100%;
+  min-height:56.25vw;
+  transform:translate(-50%,-50%);
+  object-fit:cover;
+  opacity:.52;
+}
+.hGrad{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,12,1) 0%,rgba(8,8,12,.72) 35%,rgba(8,8,12,.15) 65%,rgba(8,8,12,.55) 100%);z-index:3;}
 .hCRT{position:absolute;inset:0;z-index:4;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.04) 0px,rgba(0,0,0,.04) 1px,transparent 1px,transparent 3px);}
 .hGrain{position:absolute;inset:0;z-index:5;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");background-size:256px 256px;opacity:.05;mix-blend-mode:overlay;}
 .hContent{position:relative;z-index:10;padding:0 60px 80px;}
@@ -204,6 +212,11 @@ footer p{font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.18);text-tr
 <!-- HERO -->
 <section id="hero" class="grained">
   <div class="hBg"></div>
+  <div class="hVideoBg">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="mc-hero-video-01.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="hGrad"></div>
   <div class="hCRT"></div>
   <div class="hGrain"></div>
