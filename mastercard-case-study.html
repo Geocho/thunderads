@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mastercard Innovation Forum 2025 · Thunderads</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --ink:#08080c;
+  --gold:#c49a3c;--gold2:#f0cc68;--ash:#9a9da6;
+  --line:rgba(255,255,255,0.06);
+  --gG:linear-gradient(90deg,#a87028,#d4a038,#f0cc68,#fff4c0,#f0cc68,#d4a038,#a87028);
+}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:300;overflow-x:hidden;cursor:none;}
+
+/* ── GRAIN OVERLAY ── */
+body::after{
+  content:'';position:fixed;inset:0;z-index:1000;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size:160px 160px;opacity:.032;mix-blend-mode:overlay;
+}
+
+/* ── CURSOR ── */
+#cW{position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-58%);}
+#cS{width:28px;height:44px;filter:drop-shadow(0 0 4px rgba(240,204,104,.55));}
+#cR{position:fixed;width:44px;height:44px;border:1px solid rgba(196,154,60,.3);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .15s,height .15s,border-color .15s;}
+body:has(a:hover) #cR,body:has(button:hover) #cR{width:64px;height:64px;border-color:rgba(196,154,60,.6);}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:24px 52px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,8,12,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);}
+.nLogo{font-size:13px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;background:var(--gG);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;}
+.nBack{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);text-decoration:none;display:flex;align-items:center;gap:10px;transition:color .22s;cursor:none;}
+.nBack:hover{color:var(--gold2);}
+.nBack::before{content:'←';font-size:14px;}
+
+/* ── GRAIN SECTION ── */
+.grained{position:relative;}
+.grained::before{
+  content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size:200px 200px;opacity:.045;mix-blend-mode:soft-light;
+}
+
+/* ── HERO ── */
+#hero{position:relative;width:100%;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;}
+#hero::before{
+  content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:
+    radial-gradient(circle at 78% 30%, rgba(240,192,64,0.10) 0%, transparent 40%),
+    radial-gradient(circle at 50% 60%, rgba(240,192,64,0.04) 0%, transparent 60%);
+}
+.hBg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 70% 60% at 78% 18%, #3a1800 0%, transparent 65%),
+    radial-gradient(ellipse 50% 70% at 20% 80%, #100608 0%, transparent 70%),
+    #08080c;
+}
+.hBurst{
+  position:absolute;inset:-8% -4%;z-index:2;pointer-events:none;opacity:.55;mix-blend-mode:screen;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,.08) 0 1px, transparent 1px 100%),
+    repeating-conic-gradient(from 0deg at 50% 50%, rgba(240,204,104,.14) 0deg, rgba(240,204,104,.14) 0.5deg, transparent 0.5deg, transparent 9deg);
+  mask-image:radial-gradient(circle at 78% 28%, rgba(0,0,0,1) 0%, rgba(0,0,0,.8) 18%, rgba(0,0,0,.3) 42%, transparent 68%);
+}
+.hGrad{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,12,1) 0%,rgba(8,8,12,.5) 45%,rgba(8,8,12,.1) 100%);z-index:3;}
+.hCRT{position:absolute;inset:0;z-index:4;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.04) 0px,rgba(0,0,0,.04) 1px,transparent 1px,transparent 3px);}
+.hGrain{position:absolute;inset:0;z-index:5;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");background-size:256px 256px;opacity:.05;mix-blend-mode:overlay;}
+.hContent{position:relative;z-index:10;padding:0 60px 80px;}
+.csTag{font-size:10px;letter-spacing:.38em;font-weight:500;color:var(--gold);text-transform:uppercase;margin-bottom:24px;display:block;}
+.hTitle{font-size:clamp(42px,6.5vw,90px);font-weight:700;line-height:.98;letter-spacing:-.02em;margin-bottom:16px;max-width:820px;}
+.hTitle em{font-style:italic;font-weight:300;background:var(--gG);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.heroLine{width:72px;height:2px;background:linear-gradient(to right,#f0c040,transparent);margin-bottom:28px;}
+.hMeta{display:flex;gap:52px;flex-wrap:wrap;}
+.hm span:first-child{font-size:9px;letter-spacing:.3em;color:rgba(255,255,255,.22);text-transform:uppercase;display:block;margin-bottom:4px;}
+.hm span:last-child{font-size:14px;font-weight:500;color:rgba(255,255,255,.7);letter-spacing:.06em;}
+
+/* ── CHAPTER BLOCKS ── */
+.ch{max-width:1280px;margin:0 auto;padding:100px 60px;display:grid;grid-template-columns:200px 1fr;gap:80px;border-bottom:1px solid var(--line);position:relative;}
+#ch-brief{background:radial-gradient(ellipse 55% 80% at 88% 8%, #1e1c2e 0%, transparent 60%),radial-gradient(ellipse 40% 50% at 10% 90%, #0d0c14 0%, transparent 55%),#08080c;}
+#ch-approach{background:radial-gradient(ellipse 60% 70% at 85% 10%, #231408 0%, transparent 60%),radial-gradient(ellipse 35% 45% at 5% 85%, #100a04 0%, transparent 55%),#08080c;}
+#ch-deliver{background:radial-gradient(ellipse 50% 65% at 90% 5%, #0c1420 0%, transparent 55%),radial-gradient(ellipse 30% 40% at 8% 92%, #08080f 0%, transparent 50%),#08080c;}
+#ch-films{background:radial-gradient(ellipse 45% 55% at 85% 8%, #141010 0%, transparent 55%),#08080c;}
+
+/* ── FULL-BLEED SECTIONS ── */
+.bgS{position:relative;overflow:hidden;min-height:560px;display:flex;align-items:center;}
+.bgS .ov{position:absolute;inset:0;z-index:1;}
+.bgS .cnt{position:relative;z-index:10;padding:100px 60px;max-width:660px;}
+.bgS .cnt.rgt{margin-left:auto;text-align:right;}
+.bgS .cnt.ctr{margin:0 auto;text-align:center;max-width:800px;}
+.bgS .lbl{font-size:9px;letter-spacing:.38em;font-weight:500;color:var(--gold);text-transform:uppercase;margin-bottom:20px;display:block;}
+.bgS h2{font-size:clamp(30px,3.8vw,54px);font-weight:700;line-height:1.06;letter-spacing:.02em;margin-bottom:22px;}
+.bgS h2 em{font-style:italic;font-weight:300;background:var(--gG);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.bgS p{font-size:17px;line-height:1.68;color:rgba(255,255,255,.62);font-weight:300;max-width:540px;}
+.bgS .cnt.ctr p{margin:0 auto;}
+
+#s-problem{background:radial-gradient(ellipse 65% 55% at 82% 12%, #3d1608 0%, transparent 55%),radial-gradient(ellipse 40% 60% at 15% 75%, #1a0a04 0%, transparent 60%),radial-gradient(ellipse 30% 30% at 50% 50%, #120604 0%, transparent 70%),#08080c;}
+#s-vision{background:radial-gradient(ellipse 60% 50% at 88% 10%, #2e0e0a 0%, transparent 55%),radial-gradient(ellipse 50% 65% at 12% 80%, #1a0808 0%, transparent 60%),radial-gradient(ellipse 25% 35% at 65% 40%, #200c10 0%, transparent 60%),#08080c;}
+#s-result{background:radial-gradient(ellipse 55% 55% at 85% 8%, #1c1a2e 0%, transparent 55%),radial-gradient(ellipse 45% 55% at 10% 85%, #100c18 0%, transparent 55%),radial-gradient(ellipse 30% 40% at 50% 50%, #1a1010 0%, transparent 65%),#08080c;}
+
+/* ── QUOTE BOX ── */
+.cqBox{position:relative;border:1px solid rgba(196,154,60,.22);background:rgba(8,8,12,.6);padding:44px 48px;margin-top:44px;backdrop-filter:blur(8px);}
+.cqBox::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.cqMk{font-size:72px;line-height:.7;color:rgba(196,154,60,.18);font-weight:700;margin-bottom:14px;}
+.cqTx{font-size:clamp(17px,2vw,22px);font-style:italic;font-weight:300;line-height:1.45;color:#fff;margin-bottom:22px;max-width:600px;}
+.cqAu{font-size:11px;letter-spacing:.26em;color:var(--gold);text-transform:uppercase;}
+.cqSu{font-size:11px;letter-spacing:.16em;color:var(--ash);text-transform:uppercase;margin-top:4px;}
+
+/* ── CHAPTER TYPOGRAPHY ── */
+.chLbl{font-size:9px;letter-spacing:.38em;font-weight:500;color:var(--gold);text-transform:uppercase;padding-top:6px;}
+.chTi{font-size:clamp(28px,3.2vw,44px);font-weight:700;line-height:1.08;letter-spacing:.02em;margin-bottom:28px;}
+.chTi em{font-style:italic;font-weight:300;background:var(--gG);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.chP{font-size:18px;line-height:1.7;color:var(--ash);font-weight:300;margin-bottom:18px;max-width:720px;}
+.chP strong{color:rgba(255,255,255,.8);font-weight:500;}
+
+/* ── STEPS ── */
+.steps{display:flex;flex-direction:column;margin-top:36px;}
+.step{display:grid;grid-template-columns:56px 1fr;gap:24px;padding:26px 0;border-bottom:1px solid var(--line);}
+.stepN{font-size:10px;letter-spacing:.22em;color:var(--gold);font-weight:500;padding-top:4px;}
+.stepT{font-size:17px;font-weight:600;color:#fff;margin-bottom:6px;letter-spacing:.04em;}
+.stepB{font-size:15px;line-height:1.62;color:var(--ash);font-weight:300;}
+
+/* ── SPEAKER SCROLL STRIP ── */
+.scrlWrap{overflow:hidden;position:relative;padding:60px 0;background:#08080c;}
+.scrlWrap::before,.scrlWrap::after{content:'';position:absolute;top:60px;bottom:60px;width:120px;z-index:10;pointer-events:none;}
+.scrlWrap::before{left:0;background:linear-gradient(to right,#08080c,transparent);}
+.scrlWrap::after{right:0;background:linear-gradient(to left,#08080c,transparent);}
+.scrlTrack{display:flex;gap:3px;width:max-content;animation:scrollX 36s linear infinite;}
+.scrlTrack:hover{animation-play-state:paused;}
+.scCard{width:320px;flex-shrink:0;aspect-ratio:1/1;overflow:hidden;position:relative;transition:transform .35s ease;}
+.scCard:hover{transform:scale(1.025);}
+.scCard::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 70% 70% at 75% 20%, var(--card-glow, rgba(196,154,60,0.12)) 0%, transparent 70%);mix-blend-mode:screen;}
+.scCard::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");background-size:180px 180px;opacity:.06;mix-blend-mode:overlay;}
+.scCard .inner{position:relative;width:100%;height:100%;z-index:0;display:flex;align-items:flex-end;padding:24px;}
+.scCard .cardName{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.35);font-weight:500;position:relative;z-index:3;transition:color .25s;}
+.scCard:hover .cardName{color:rgba(255,255,255,.7);}
+
+/* ── DELIVERABLES GRID ── */
+.dlGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:48px;}
+.dl{background:rgba(8,8,12,.9);padding:36px 32px;position:relative;overflow:hidden;transition:background .3s;}
+.dl::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 80% 80% at 85% 10%, rgba(196,154,60,0.05) 0%, transparent 65%);}
+.dl::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 85% 12%, rgba(240,192,64,.08), transparent 30%);opacity:0;transition:opacity .3s;pointer-events:none;}
+.dl:hover::after{opacity:1;}
+.dlN{font-size:9px;letter-spacing:.28em;color:var(--gold);margin-bottom:16px;font-weight:500;text-transform:uppercase;}
+.dlT{font-size:18px;font-weight:600;color:#fff;line-height:1.2;margin-bottom:10px;}
+.dlB{font-size:13px;line-height:1.6;color:var(--ash);font-weight:300;}
+
+/* ── STATS ROW ── */
+.statsRow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:2px;}
+.st{background:rgba(8,8,12,.9);padding:36px 32px;position:relative;overflow:hidden;}
+.st::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 90% 90% at 85% 5%, rgba(196,154,60,0.07) 0%, transparent 60%);pointer-events:none;}
+.stN{font-size:48px;font-weight:700;background:var(--gG);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:8px;position:relative;}
+.stL{font-size:11px;letter-spacing:.18em;color:var(--ash);text-transform:uppercase;font-weight:300;position:relative;}
+
+/* ── VIDEO ROW ── */
+.vidRow{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:48px;}
+.vidWrap{position:relative;aspect-ratio:16/9;background:#0e0e14;overflow:hidden;}
+.vidWrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
+.vidLbl{font-size:10px;letter-spacing:.22em;color:var(--ash);text-transform:uppercase;margin-top:10px;}
+
+/* ── NEXT CASE STUDY ── */
+.nextS{padding:100px 60px;max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;}
+.ncL{font-size:10px;letter-spacing:.32em;color:rgba(255,255,255,.2);text-transform:uppercase;margin-bottom:12px;}
+.ncT{font-size:clamp(22px,2.6vw,36px);font-weight:700;letter-spacing:.03em;}
+.ncBtn{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--ink);background:linear-gradient(90deg,#a87028,#d4a038,#f0cc68,#d4a038,#a87028);background-size:200%;border:none;padding:16px 36px;cursor:none;transition:background-position .4s,box-shadow .25s;}
+.ncBtn:hover{background-position:100%;box-shadow:0 0 32px rgba(196,154,60,.3);}
+
+.rule{width:100%;height:1px;background:var(--line);}
+footer{border-top:1px solid var(--line);padding:36px 60px;display:flex;align-items:center;justify-content:space-between;}
+footer p{font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.18);text-transform:uppercase;}
+
+/* ── REVEALS ── */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .85s ease,transform .85s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+.reveal-d1{transition-delay:.1s;}
+.reveal-d2{transition-delay:.2s;}
+
+@keyframes scrollX{0%{transform:translateX(0);}100%{transform:translateX(var(--hw,-50%))}}
+</style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cW">
+  <svg id="cS" viewBox="0 0 28 44" fill="none">
+    <defs>
+      <linearGradient id="bG" x1="14" y1="0" x2="14" y2="44" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#fff4c0"/><stop offset="30%" stop-color="#f0cc68"/>
+        <stop offset="65%" stop-color="#d4a038"/><stop offset="100%" stop-color="#a87028"/>
+      </linearGradient>
+      <filter id="gl" x="-60%" y="-30%" width="220%" height="160%">
+        <feGaussianBlur stdDeviation="2.5" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <polygon points="18,1 5,20 13,20 10,43 23,18 15,18" fill="url(#bG)" filter="url(#gl)"/>
+  </svg>
+</div>
+<div id="cR"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="thunderads-landing.html" class="nBack">All Work</a>
+  <a href="thunderads-landing.html" class="nLogo">Thunderads</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="grained">
+  <div class="hBg"></div>
+  <div class="hBurst"></div>
+  <div class="hGrad"></div>
+  <div class="hCRT"></div>
+  <div class="hGrain"></div>
+  <div class="hContent reveal">
+    <span class="csTag">Case Study · Executive Production · Athens 2025</span>
+    <h1 class="hTitle">Mastercard<br>Innovation Forum.<br><em>The future together.</em></h1>
+    <div class="heroLine"></div>
+    <div class="hMeta">
+      <div class="hm"><span>Client</span><span>Mastercard Greece</span></div>
+      <div class="hm"><span>Agency</span><span>MSPS</span></div>
+      <div class="hm"><span>Scope</span><span>Film · Photography · Social</span></div>
+      <div class="hm"><span>Venue</span><span>Piraeus 260, Athens</span></div>
+      <div class="hm"><span>Scale</span><span>450 Guests</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE BRIEF -->
+<div class="ch reveal" id="ch-brief">
+  <div class="chLbl">The Brief</div>
+  <div>
+    <h2 class="chTi">A forum about <em>the future</em> deserved coverage that looked like it.</h2>
+    <p class="chP">Mastercard's annual Innovation Forum is the moment the brand gathers leaders from Greece, Cyprus, and Malta and speaks openly about what's next. In 2025 the event moved to Piraeus 260, scaled up to 450 guests, and added live feed requirements projected on screen during the event itself.</p>
+    <p class="chP">The brief from agency MSPS was clear on the surface: film crew, photography, vision mixing, a same-day social cut, and a highlight reel within three days. <strong>The real brief was unstated: make Mastercard look as innovative as it claims to be.</strong></p>
+  </div>
+</div>
+
+<!-- THE PROBLEM -->
+<section class="bgS reveal grained" id="s-problem">
+  <div class="ov" style="background:linear-gradient(105deg,rgba(8,8,12,.97) 0%,rgba(8,8,12,.55) 55%,rgba(8,8,12,.12) 100%);"></div>
+  <div class="cnt">
+    <span class="lbl">The Problem</span>
+    <h2>Conference footage ages overnight.<br><em>Stories don't.</em></h2>
+    <p>For a brand whose entire positioning is built on innovation and trust, the gap between message and execution is costly. The footage is the last impression the event leaves on the world. It had to carry the same weight as the speakers on stage.</p>
+  </div>
+</section>
+
+<!-- THE APPROACH -->
+<div class="ch reveal" id="ch-approach">
+  <div class="chLbl">The Approach</div>
+  <div>
+    <h2 class="chTi">Cinematic thinking.<br><em>Social-first execution.</em></h2>
+    <p class="chP">We reframed the production around a single idea: this film would not summarize the event. It would invite people into it. Every decision, from lens choice to edit rhythm, served that intent.</p>
+    <div class="steps">
+      <div class="step"><span class="stepN">01</span><div><div class="stepT">Cinematic over documentary</div><div class="stepB">Cinema lenses. Slow-motion captures of VIPs and keynote speakers. A docu-style aesthetic that elevated every frame above standard conference footage.</div></div></div>
+      <div class="step"><span class="stepN">02</span><div><div class="stepT">Social-first from the first frame</div><div class="stepB">A dedicated vertical camera shooting throughout. An on-site editor cutting reels and stories in real time. Speaker soundbites formatted for LinkedIn and Instagram, ready before guests left the building.</div></div></div>
+      <div class="step"><span class="stepN">03</span><div><div class="stepT">Live vision mixing</div><div class="stepB">Multi-camera live switching with a flow director managing the room feed projected on screen during the event, keeping the audience connected to every angle.</div></div></div>
+      <div class="step"><span class="stepN">04</span><div><div class="stepT">Two films, two purposes</div><div class="stepB">The hero film "The future together" was not a recap. Built from real words and real moments to spark dialogue. The full event film documented the day for the global record.</div></div></div>
+      <div class="step"><span class="stepN">05</span><div><div class="stepT">A complete social content system</div><div class="stepB">Nine speaker campaigns with tailored copy for Meta, LinkedIn, and YouTube. Each formatted for its platform. Each carrying the brand's voice without repeating it.</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- THE VISION QUOTE -->
+<section class="bgS reveal grained" id="s-vision">
+  <div class="ov" style="background:linear-gradient(255deg,rgba(8,8,12,.97) 0%,rgba(8,8,12,.55) 50%,rgba(8,8,12,.1) 100%);"></div>
+  <div class="cnt rgt">
+    <span class="lbl">The Vision</span>
+    <h2><em>"Not just coverage.</em><br>Images that tell a story<br>and give the event<br>life beyond the day."</h2>
+    <p style="margin-left:auto;">George Chorevas · Brief response to MSPS, September 2025</p>
+  </div>
+</section>
+
+<!-- SPEAKER SCROLL STRIP -->
+<div class="scrlWrap reveal">
+  <div class="scrlTrack" id="track">
+    <div class="scCard" style="--card-glow:rgba(196,120,60,0.18);background:radial-gradient(ellipse 80% 80% at 75% 18%,#2e1208,#080606)"><div class="inner"><span class="cardName">Mika Häkkinen</span></div></div>
+    <div class="scCard" style="--card-glow:rgba(60,120,196,0.15);background:radial-gradient(ellipse 80% 80% at 75% 18%,#0a1a2e,#060810)"><div class="inner"><span class="cardName">Panagiotis Polydoros</span></div></div>
+    <div class="scCard" style="--card-glow:rgba(196,60,80,0.15);background:radial-gradient(ellipse 80% 80% at 75% 18%,#2a0810,#080608)"><div class="inner"><span class="cardName">Nina Schick</span></div></div>
+    <div class="scCard" style="--card-glow:rgba(80,180,120,0.12);background:radial-gradient(ellipse 80% 80% at 75% 18%,#081a12,#060808)"><div class="inner"><span class="cardName">Jessica Claar</span></div></div>
+    <div class="scCard" style="--card-glow:rgba(196,154,60,0.18);background:radial-gradient(ellipse 80% 80% at 75% 18%,#241808,#080606)"><div class="inner"><span class="cardName">Agnieszka Śpionek</span></div></div>
+    <div class="scCard" style="--card-glow:rgba(140,80,196,0.14);background:radial-gradient(ellipse 80% 80% at 75% 18%,#180c28,#080608)"><div class="inner"><span class="cardName">Michele Centemero</span></div></div>
+    <div class="scCard" style="--card-glow:rgba(196,100,40,0.16);background:radial-gradient(ellipse 80% 80% at 75% 18%,#281008,#080606)"><div class="inner"><span class="cardName">Peter Bakenecker</span></div></div>
+    <div class="scCard" style="--card-glow:rgba(60,160,196,0.14);background:radial-gradient(ellipse 80% 80% at 75% 18%,#081820,#060808)"><div class="inner"><span class="cardName">Natalia Lechmanova</span></div></div>
+    <div class="scCard" style="--card-glow:rgba(196,154,60,0.2);background:radial-gradient(ellipse 80% 80% at 75% 18%,#2a1c06,#080606)"><div class="inner"><span class="cardName">Brice van de Walle</span></div></div>
+    <!-- Duplicate set for seamless loop -->
+    <div class="scCard" style="--card-glow:rgba(196,120,60,0.18);background:radial-gradient(ellipse 80% 80% at 75% 18%,#2e1208,#080606)"><div class="inner"><span class="cardName">Mika Häkkinen</span></div></div>
+    <div class="scCard" style="--card-glow:rgba(60,120,196,0.15);background:radial-gradient(ellipse 80% 80% at 75% 18%,#0a1a2e,#060810)"><div class="inner"><span class="cardName">Panagiotis Polydoros</span></div></div>
+    <div class="scCard" style="--card-glow:rgba(196,60,80,0.15);background:radial-gradient(ellipse 80% 80% at 75% 18%,#2a0810,#080608)"><div class="inner"><span class="cardName">Nina Schick</span></div></div>
+    <div class="scCard" style="--card-glow:rgba(80,180,120,0.12);background:radial-gradient(ellipse 80% 80% at 75% 18%,#081a12,#060808)"><div class="inner"><span class="cardName">Jessica Claar</span></div></div>
+    <div class="scCard" style="--card-glow:rgba(196,154,60,0.18);background:radial-gradient(ellipse 80% 80% at 75% 18%,#241808,#080606)"><div class="inner"><span class="cardName">Agnieszka Śpionek</span></div></div>
+    <div class="scCard" style="--card-glow:rgba(140,80,196,0.14);background:radial-gradient(ellipse 80% 80% at 75% 18%,#180c28,#080608)"><div class="inner"><span class="cardName">Michele Centemero</span></div></div>
+    <div class="scCard" style="--card-glow:rgba(196,100,40,0.16);background:radial-gradient(ellipse 80% 80% at 75% 18%,#281008,#080606)"><div class="inner"><span class="cardName">Peter Bakenecker</span></div></div>
+    <div class="scCard" style="--card-glow:rgba(60,160,196,0.14);background:radial-gradient(ellipse 80% 80% at 75% 18%,#081820,#060808)"><div class="inner"><span class="cardName">Natalia Lechmanova</span></div></div>
+    <div class="scCard" style="--card-glow:rgba(196,154,60,0.2);background:radial-gradient(ellipse 80% 80% at 75% 18%,#2a1c06,#080606)"><div class="inner"><span class="cardName">Brice van de Walle</span></div></div>
+  </div>
+</div>
+
+<!-- DELIVERABLES -->
+<div class="ch reveal" id="ch-deliver">
+  <div class="chLbl">Deliverables</div>
+  <div>
+    <h2 class="chTi">Everything delivered.<br><em>Nothing templated.</em></h2>
+    <div class="dlGrid">
+      <div class="dl"><p class="dlN">Film 01</p><p class="dlT">The Future Together</p><p class="dlB">Hero narrative film. Not a summary. An invitation to continue the conversation.</p></div>
+      <div class="dl"><p class="dlN">Film 02</p><p class="dlT">The Full Event</p><p class="dlB">Complete event documentation for Mastercard's internal and external archive.</p></div>
+      <div class="dl"><p class="dlN">Social</p><p class="dlT">Same-day Reels</p><p class="dlB">Vertical cuts and speaker clips formatted for LinkedIn and Instagram, live by end of day.</p></div>
+      <div class="dl"><p class="dlN">Photography</p><p class="dlT">303 Highlight Stills</p><p class="dlB">Full event photography spanning arrival, sessions, networking, and key speaker moments.</p></div>
+      <div class="dl"><p class="dlN">Content</p><p class="dlT">18 Quote Cards</p><p class="dlB">Branded speaker quotes designed for social distribution across all platforms.</p></div>
+      <div class="dl"><p class="dlN">Copy</p><p class="dlT">Full Social Package</p><p class="dlB">Platform-specific copy for Meta, LinkedIn, and YouTube for all 9 speakers plus both films.</p></div>
+    </div>
+    <div class="statsRow">
+      <div class="st"><p class="stN">450</p><p class="stL">Guests</p></div>
+      <div class="st"><p class="stN">303</p><p class="stL">Stills delivered</p></div>
+      <div class="st"><p class="stN">9</p><p class="stL">Speaker campaigns</p></div>
+      <div class="st"><p class="stN">2</p><p class="stL">Films produced</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- THE FILMS -->
+<div class="ch reveal" id="ch-films">
+  <div class="chLbl">The Films</div>
+  <div>
+    <h2 class="chTi">Watch the work.</h2>
+    <div class="vidRow">
+      <div>
+        <div class="vidWrap"><iframe src="https://www.youtube.com/embed/ZoIGozz4pMU" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <p class="vidLbl">The Future Together · Hero Film</p>
+      </div>
+      <div>
+        <div class="vidWrap"><iframe src="https://www.youtube.com/embed/UCn3ruytizE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <p class="vidLbl">The Full Event · Documentary</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- THE RESULT -->
+<section class="bgS reveal grained" id="s-result">
+  <div class="ov" style="background:rgba(8,8,12,.72);"></div>
+  <div class="cnt ctr">
+    <span class="lbl">The Result</span>
+    <h2>The client said it<br><em>better than we could.</em></h2>
+    <p>The deliverables landed on time. Same-day social went live before guests left the building. The hero film reframed what event coverage could be for Mastercard.</p>
+    <div class="cqBox">
+      <div class="cqMk">"</div>
+      <p class="cqTx">This is amazing. You have done an incredible job. I can't believe what we made. It's so magnificent.</p>
+      <p class="cqAu">Evangelos Galatis</p>
+      <p class="cqSu">Director, Marketing Services · Mastercard Greece</p>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+<div class="nextS reveal">
+  <div>
+    <p class="ncL">Next Case Study</p>
+    <p class="ncT">Google · Grow Greek Tourism Online</p>
+  </div>
+  <button class="ncBtn">View Case Study →</button>
+</div>
+<div class="rule"></div>
+
+<footer>
+  <p>Thunderads · Athens · Est. 2013</p>
+  <p>© 2025 All rights reserved</p>
+</footer>
+
+<script>
+// ── Cursor ──
+const cW=document.getElementById('cW'),cR=document.getElementById('cR');
+let mx=0,my=0,rx=0,ry=0;
+window.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+(function tk(){
+  cW.style.left=mx+'px';cW.style.top=my+'px';
+  rx+=(mx-rx)*0.1;ry+=(my-ry)*0.1;
+  cR.style.left=rx+'px';cR.style.top=ry+'px';
+  requestAnimationFrame(tk);
+})();
+
+// ── Reveals ──
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');obs.unobserve(x.target);}});
+},{threshold:0.07});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Trigger hero reveal immediately
+setTimeout(()=>{
+  document.querySelectorAll('#hero .reveal').forEach(el=>el.classList.add('in'));
+},100);
+
+// ── Speaker strip scroll width ──
+function initScroll(){
+  const track=document.getElementById('track');
+  const halfW=track.scrollWidth/2;
+  track.style.setProperty('--hw',`-${halfW}px`);
+}
+window.addEventListener('load',initScroll);
+
+// ── Cursor trail ──
+let lastTrail=0;
+window.addEventListener('mousemove',e=>{
+  const now=performance.now();
+  if(now-lastTrail<22) return;
+  lastTrail=now;
+  const t=document.createElement('div');
+  t.style.cssText='position:fixed;pointer-events:none;z-index:9997;width:4px;height:4px;border-radius:50%;background:rgba(240,192,64,0.55);transform:translate(-50%,-50%);transition:opacity .32s ease,transform .32s ease;';
+  t.style.left=e.clientX+'px';
+  t.style.top=e.clientY+'px';
+  document.body.appendChild(t);
+  requestAnimationFrame(()=>{t.style.opacity='0';t.style.transform='translate(-50%,-50%) scale(2.2)';});
+  setTimeout(()=>t.remove(),320);
+});
+
+// ── Hero pulse ──
+const hero=document.getElementById('hero');
+setInterval(()=>{
+  hero.animate([
+    {filter:'brightness(1)'},
+    {filter:'brightness(1.045)'},
+    {filter:'brightness(1)'}
+  ],{duration:2400,easing:'ease-in-out'});
+},8000);
+</script>
+</body>
+</html>
