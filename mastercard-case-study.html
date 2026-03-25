@@ -46,27 +46,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:24px 52px;display:fl
 
 /* ── HERO ── */
 #hero{position:relative;width:100%;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;}
-#hero::before{
-  content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
-  background:
-    radial-gradient(circle at 78% 30%, rgba(240,192,64,0.10) 0%, transparent 40%),
-    radial-gradient(circle at 50% 60%, rgba(240,192,64,0.04) 0%, transparent 60%);
+.hBg{position:absolute;inset:0;background:#08080c;}
+.hVideoBg{
+  position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;
 }
-.hBg{
-  position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse 70% 60% at 78% 18%, #3a1800 0%, transparent 65%),
-    radial-gradient(ellipse 50% 70% at 20% 80%, #100608 0%, transparent 70%),
-    #08080c;
+.hVideoBg iframe{
+  position:absolute;
+  top:50%;left:50%;
+  width:177.78vh;
+  height:100vh;
+  min-width:100%;
+  min-height:56.25vw;
+  transform:translate(-50%,-50%);
+  border:none;
+  opacity:.52;
 }
-.hBurst{
-  position:absolute;inset:-8% -4%;z-index:2;pointer-events:none;opacity:.55;mix-blend-mode:screen;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(255,255,255,.08) 0 1px, transparent 1px 100%),
-    repeating-conic-gradient(from 0deg at 50% 50%, rgba(240,204,104,.14) 0deg, rgba(240,204,104,.14) 0.5deg, transparent 0.5deg, transparent 9deg);
-  mask-image:radial-gradient(circle at 78% 28%, rgba(0,0,0,1) 0%, rgba(0,0,0,.8) 18%, rgba(0,0,0,.3) 42%, transparent 68%);
-}
-.hGrad{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,12,1) 0%,rgba(8,8,12,.5) 45%,rgba(8,8,12,.1) 100%);z-index:3;}
+.hGrad{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,12,1) 0%,rgba(8,8,12,.72) 35%,rgba(8,8,12,.15) 65%,rgba(8,8,12,.55) 100%);z-index:3;}
 .hCRT{position:absolute;inset:0;z-index:4;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.04) 0px,rgba(0,0,0,.04) 1px,transparent 1px,transparent 3px);}
 .hGrain{position:absolute;inset:0;z-index:5;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");background-size:256px 256px;opacity:.05;mix-blend-mode:overlay;}
 .hContent{position:relative;z-index:10;padding:0 60px 80px;}
@@ -80,6 +75,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:24px 52px;display:fl
 
 /* ── CHAPTER BLOCKS ── */
 .ch{max-width:1280px;margin:0 auto;padding:100px 60px;display:grid;grid-template-columns:200px 1fr;gap:80px;border-bottom:1px solid var(--line);position:relative;}
+.ch.has-img{grid-template-columns:200px 1fr 420px;}
+.chImg{position:relative;overflow:hidden;align-self:stretch;min-height:400px;}
+.chImg img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.85);transition:filter .4s;}
+.chImg:hover img{filter:brightness(1);}
+.chImg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(8,8,12,.35) 0%,transparent 60%);pointer-events:none;}
 #ch-brief{background:radial-gradient(ellipse 55% 80% at 88% 8%, #1e1c2e 0%, transparent 60%),radial-gradient(ellipse 40% 50% at 10% 90%, #0d0c14 0%, transparent 55%),#08080c;}
 #ch-approach{background:radial-gradient(ellipse 60% 70% at 85% 10%, #231408 0%, transparent 60%),radial-gradient(ellipse 35% 45% at 5% 85%, #100a04 0%, transparent 55%),#08080c;}
 #ch-deliver{background:radial-gradient(ellipse 50% 65% at 90% 5%, #0c1420 0%, transparent 55%),radial-gradient(ellipse 30% 40% at 8% 92%, #08080f 0%, transparent 50%),#08080c;}
@@ -138,6 +138,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:24px 52px;display:fl
 .scCard .cardName{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.35);font-weight:500;position:relative;z-index:3;transition:color .25s;}
 .scCard:hover .cardName{color:rgba(255,255,255,.7);}
 
+/* ── QUOTE GRID ── */
+#ch-quotes{background:radial-gradient(ellipse 50% 60% at 88% 8%,#1a0c04 0%,transparent 55%),#08080c;}
+.quoteGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin-top:48px;}
+.qCard{aspect-ratio:1/1;overflow:hidden;position:relative;}
+.qCard img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
+.qCard:hover img{transform:scale(1.04);}
+
 /* ── DELIVERABLES GRID ── */
 .dlGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:48px;}
 .dl{background:rgba(8,8,12,.9);padding:36px 32px;position:relative;overflow:hidden;transition:background .3s;}
@@ -179,6 +186,11 @@ footer p{font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.18);text-tr
 .reveal-d2{transition-delay:.2s;}
 
 @keyframes scrollX{0%{transform:translateX(0);}100%{transform:translateX(var(--hw,-50%))}}
+
+@media(max-width:1100px){
+  .ch.has-img{grid-template-columns:200px 1fr;}
+  .chImg{display:none;}
+}
 </style>
 </head>
 <body>
@@ -210,7 +222,13 @@ footer p{font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.18);text-tr
 <!-- HERO -->
 <section id="hero" class="grained">
   <div class="hBg"></div>
-  <div class="hBurst"></div>
+  <div class="hVideoBg">
+    <iframe
+      src="https://www.youtube.com/embed/ZoIGozz4pMU?autoplay=1&mute=1&loop=1&playlist=ZoIGozz4pMU&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
   <div class="hGrad"></div>
   <div class="hCRT"></div>
   <div class="hGrain"></div>
@@ -229,13 +247,14 @@ footer p{font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.18);text-tr
 </section>
 
 <!-- THE BRIEF -->
-<div class="ch reveal" id="ch-brief">
+<div class="ch has-img reveal" id="ch-brief">
   <div class="chLbl">The Brief</div>
   <div>
     <h2 class="chTi">A forum about <em>the future</em> deserved coverage that looked like it.</h2>
     <p class="chP">Mastercard's annual Innovation Forum is the moment the brand gathers leaders from Greece, Cyprus, and Malta and speaks openly about what's next. In 2025 the event moved to Piraeus 260, scaled up to 450 guests, and added live feed requirements projected on screen during the event itself.</p>
     <p class="chP">The brief from agency MSPS was clear on the surface: film crew, photography, vision mixing, a same-day social cut, and a highlight reel within three days. <strong>The real brief was unstated: make Mastercard look as innovative as it claims to be.</strong></p>
   </div>
+  <div class="chImg"><img src="mc-quote-01.jpg" alt=""></div>
 </div>
 
 <!-- THE PROBLEM -->
@@ -249,7 +268,7 @@ footer p{font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.18);text-tr
 </section>
 
 <!-- THE APPROACH -->
-<div class="ch reveal" id="ch-approach">
+<div class="ch has-img reveal" id="ch-approach">
   <div class="chLbl">The Approach</div>
   <div>
     <h2 class="chTi">Cinematic thinking.<br><em>Social-first execution.</em></h2>
@@ -262,11 +281,13 @@ footer p{font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.18);text-tr
       <div class="step"><span class="stepN">05</span><div><div class="stepT">A complete social content system</div><div class="stepB">Nine speaker campaigns with tailored copy for Meta, LinkedIn, and YouTube. Each formatted for its platform. Each carrying the brand's voice without repeating it.</div></div></div>
     </div>
   </div>
+  <div class="chImg"><img src="mc-quote-03.jpg" alt=""></div>
 </div>
 
 <!-- THE VISION QUOTE -->
 <section class="bgS reveal grained" id="s-vision">
   <div class="ov" style="background:linear-gradient(255deg,rgba(8,8,12,.97) 0%,rgba(8,8,12,.55) 50%,rgba(8,8,12,.1) 100%);"></div>
+  <img src="mc-quote-05.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.18;z-index:0;">
   <div class="cnt rgt">
     <span class="lbl">The Vision</span>
     <h2><em>"Not just coverage.</em><br>Images that tell a story<br>and give the event<br>life beyond the day."</h2>
@@ -274,33 +295,41 @@ footer p{font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.18);text-tr
   </div>
 </section>
 
-<!-- SPEAKER SCROLL STRIP -->
+<!-- HIGHLIGHT SCROLL STRIP -->
 <div class="scrlWrap reveal">
   <div class="scrlTrack" id="track">
-    <div class="scCard" style="--card-glow:rgba(196,120,60,0.18);background:radial-gradient(ellipse 80% 80% at 75% 18%,#2e1208,#080606)"><div class="inner"><span class="cardName">Mika Häkkinen</span></div></div>
-    <div class="scCard" style="--card-glow:rgba(60,120,196,0.15);background:radial-gradient(ellipse 80% 80% at 75% 18%,#0a1a2e,#060810)"><div class="inner"><span class="cardName">Panagiotis Polydoros</span></div></div>
-    <div class="scCard" style="--card-glow:rgba(196,60,80,0.15);background:radial-gradient(ellipse 80% 80% at 75% 18%,#2a0810,#080608)"><div class="inner"><span class="cardName">Nina Schick</span></div></div>
-    <div class="scCard" style="--card-glow:rgba(80,180,120,0.12);background:radial-gradient(ellipse 80% 80% at 75% 18%,#081a12,#060808)"><div class="inner"><span class="cardName">Jessica Claar</span></div></div>
-    <div class="scCard" style="--card-glow:rgba(196,154,60,0.18);background:radial-gradient(ellipse 80% 80% at 75% 18%,#241808,#080606)"><div class="inner"><span class="cardName">Agnieszka Śpionek</span></div></div>
-    <div class="scCard" style="--card-glow:rgba(140,80,196,0.14);background:radial-gradient(ellipse 80% 80% at 75% 18%,#180c28,#080608)"><div class="inner"><span class="cardName">Michele Centemero</span></div></div>
-    <div class="scCard" style="--card-glow:rgba(196,100,40,0.16);background:radial-gradient(ellipse 80% 80% at 75% 18%,#281008,#080606)"><div class="inner"><span class="cardName">Peter Bakenecker</span></div></div>
-    <div class="scCard" style="--card-glow:rgba(60,160,196,0.14);background:radial-gradient(ellipse 80% 80% at 75% 18%,#081820,#060808)"><div class="inner"><span class="cardName">Natalia Lechmanova</span></div></div>
-    <div class="scCard" style="--card-glow:rgba(196,154,60,0.2);background:radial-gradient(ellipse 80% 80% at 75% 18%,#2a1c06,#080606)"><div class="inner"><span class="cardName">Brice van de Walle</span></div></div>
-    <!-- Duplicate set for seamless loop -->
-    <div class="scCard" style="--card-glow:rgba(196,120,60,0.18);background:radial-gradient(ellipse 80% 80% at 75% 18%,#2e1208,#080606)"><div class="inner"><span class="cardName">Mika Häkkinen</span></div></div>
-    <div class="scCard" style="--card-glow:rgba(60,120,196,0.15);background:radial-gradient(ellipse 80% 80% at 75% 18%,#0a1a2e,#060810)"><div class="inner"><span class="cardName">Panagiotis Polydoros</span></div></div>
-    <div class="scCard" style="--card-glow:rgba(196,60,80,0.15);background:radial-gradient(ellipse 80% 80% at 75% 18%,#2a0810,#080608)"><div class="inner"><span class="cardName">Nina Schick</span></div></div>
-    <div class="scCard" style="--card-glow:rgba(80,180,120,0.12);background:radial-gradient(ellipse 80% 80% at 75% 18%,#081a12,#060808)"><div class="inner"><span class="cardName">Jessica Claar</span></div></div>
-    <div class="scCard" style="--card-glow:rgba(196,154,60,0.18);background:radial-gradient(ellipse 80% 80% at 75% 18%,#241808,#080606)"><div class="inner"><span class="cardName">Agnieszka Śpionek</span></div></div>
-    <div class="scCard" style="--card-glow:rgba(140,80,196,0.14);background:radial-gradient(ellipse 80% 80% at 75% 18%,#180c28,#080608)"><div class="inner"><span class="cardName">Michele Centemero</span></div></div>
-    <div class="scCard" style="--card-glow:rgba(196,100,40,0.16);background:radial-gradient(ellipse 80% 80% at 75% 18%,#281008,#080606)"><div class="inner"><span class="cardName">Peter Bakenecker</span></div></div>
-    <div class="scCard" style="--card-glow:rgba(60,160,196,0.14);background:radial-gradient(ellipse 80% 80% at 75% 18%,#081820,#060808)"><div class="inner"><span class="cardName">Natalia Lechmanova</span></div></div>
-    <div class="scCard" style="--card-glow:rgba(196,154,60,0.2);background:radial-gradient(ellipse 80% 80% at 75% 18%,#2a1c06,#080606)"><div class="inner"><span class="cardName">Brice van de Walle</span></div></div>
+    <div class="scCard" style="background:url('mc-highlight-01.jpeg') center/cover no-repeat"><div class="inner"></div></div>
+    <div class="scCard" style="background:url('mc-highlight-04.jpeg') center/cover no-repeat"><div class="inner"></div></div>
+    <div class="scCard" style="background:url('mc-highlight-06.jpeg') center/cover no-repeat"><div class="inner"></div></div>
+    <div class="scCard" style="background:url('mc-highlight-07.jpeg') center/cover no-repeat"><div class="inner"></div></div>
+    <div class="scCard" style="background:url('mc-highlight-01.jpeg') center/cover no-repeat"><div class="inner"></div></div>
+    <div class="scCard" style="background:url('mc-highlight-04.jpeg') center/cover no-repeat"><div class="inner"></div></div>
+    <div class="scCard" style="background:url('mc-highlight-06.jpeg') center/cover no-repeat"><div class="inner"></div></div>
+    <div class="scCard" style="background:url('mc-highlight-07.jpeg') center/cover no-repeat"><div class="inner"></div></div>
+  </div>
+</div>
+
+<!-- QUOTE CARDS -->
+<div class="ch reveal" id="ch-quotes">
+  <div class="chLbl">The Work</div>
+  <div>
+    <h2 class="chTi">18 quote cards.<br><em>9 voices. One story.</em></h2>
+    <p class="chP">Every speaker got a campaign — branded quote cards designed for social distribution, formatted for LinkedIn and Instagram, and delivered the same day.</p>
+    <div class="quoteGrid">
+      <div class="qCard"><img src="mc-quote-01.jpg" alt="" loading="lazy"></div>
+      <div class="qCard"><img src="mc-quote-02.jpg" alt="" loading="lazy"></div>
+      <div class="qCard"><img src="mc-quote-03.jpg" alt="" loading="lazy"></div>
+      <div class="qCard"><img src="mc-quote-04.jpg" alt="" loading="lazy"></div>
+      <div class="qCard"><img src="mc-quote-05.jpg" alt="" loading="lazy"></div>
+      <div class="qCard"><img src="mc-quote-06.jpg" alt="" loading="lazy"></div>
+      <div class="qCard"><img src="mc-quote-07.jpg" alt="" loading="lazy"></div>
+      <div class="qCard"><img src="mc-quote-08.jpg" alt="" loading="lazy"></div>
+    </div>
   </div>
 </div>
 
 <!-- DELIVERABLES -->
-<div class="ch reveal" id="ch-deliver">
+<div class="ch has-img reveal" id="ch-deliver">
   <div class="chLbl">Deliverables</div>
   <div>
     <h2 class="chTi">Everything delivered.<br><em>Nothing templated.</em></h2>
@@ -319,6 +348,7 @@ footer p{font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.18);text-tr
       <div class="st"><p class="stN">2</p><p class="stL">Films produced</p></div>
     </div>
   </div>
+  <div class="chImg"><img src="mc-quote-07.jpg" alt=""></div>
 </div>
 
 <!-- THE FILMS -->
@@ -389,9 +419,10 @@ const obs=new IntersectionObserver(e=>{
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
 // Trigger hero reveal immediately
+document.querySelectorAll('#hero .reveal').forEach(el=>el.classList.add('in'));
 setTimeout(()=>{
   document.querySelectorAll('#hero .reveal').forEach(el=>el.classList.add('in'));
-},100);
+},50);
 
 // ── Speaker strip scroll width ──
 function initScroll(){
