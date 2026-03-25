@@ -431,7 +431,7 @@ footer p{font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.15);text-tr
   <p>© 2025 All rights reserved</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const cW=document.getElementById('cW'),cR=document.getElementById('cR');
 let mx=0,my=0,rx=0,ry=0;
 window.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
@@ -453,4 +453,12 @@ window.addEventListener('mousemove',e=>{
   t.style.cssText='position:fixed;pointer-events:none;z-index:9997;width:4px;height:4px;border-radius:50%;background:rgba(240,192,64,0.55);transform:translate(-50%,-50%);transition:opacity .32s ease,transform .32s ease;';
   t.style.left=e.clientX+'px';t.style.top=e.clientY+'px';
   document.body.appendChild(t);
-  requestAnimationFrame(()=>{t.style.opacity='0';t.style.transform='translate(-50%,
+  requestAnimationFrame(()=>{t.style.opacity='0';t.style.transform='translate(-50%,-50%) scale(2.2)';});
+  setTimeout(()=>t.remove(),320);
+});
+
+const hero=document.getElementById('hero');
+setInterval(()=>{hero.animate([{filter:'brightness(1)'},{filter:'brightness(1.04)'},{filter:'brightness(1)'}],{duration:2200,easing:'ease-in-out'});},7000);
+</script>
+</body>
+</html>
