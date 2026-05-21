@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hoper · Don't go. Fly. · Thunderads</title>
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hoper · Don't go. Fly. · Thunderads Case Study">
+<meta property="og:description" content="Hoper isn't one product. It's six. We built the brand platform that writes the right line every time: Pillar times Stage times Context. One system, 240 right answers.">
+<meta property="og:url" content="https://geocho.github.io/thunderads/hoper-brand-case-study.html">
+<meta property="og:site_name" content="Thunderads">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hoper · Don't go. Fly. · Thunderads">
+<meta name="twitter:description" content="Six products. One brand. A messaging system that writes the right line every time. Pillar times Stage times Context.">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --ink:#08080c;
+  --gold:#c49a3c;--gold2:#f0cc68;--ash:#9a9da6;
+  --plum:#3a1a4e;--violet:#5a2470;
+  --line:rgba(255,255,255,0.06);
+  --gG:linear-gradient(90deg,#a87028,#d4a038,#f0cc68,#fff4c0,#f0cc68,#d4a038,#a87028);
+}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:300;overflow-x:hidden;cursor:none;}
+
+body::after{
+  content:'';position:fixed;inset:0;z-index:1000;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size:160px 160px;opacity:.032;mix-blend-mode:overlay;
+}
+
+#cW{position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-58%);}
+#cS{width:28px;height:44px;filter:drop-shadow(0 0 4px rgba(240,204,104,.55));}
+#cR{position:fixed;width:44px;height:44px;border:1px solid rgba(196,154,60,.3);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .15s,height .15s,border-color .15s;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:24px 52px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,8,12,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);}
+.nLogo{font-size:13px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;background:var(--gG);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;}
+.nBack{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);text-decoration:none;display:flex;align-items:center;gap:10px;transition:color .22s;cursor:none;}
+.nBack:hover{color:var(--gold2);}
+.nBack::before{content:'←';font-size:14px;}
+
+.grained{position:relative;}
+.grained::before{
+  content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size:200px 200px;opacity:.045;mix-blend-mode:soft-light;
+}
+
+#hero{position:relative;width:100%;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;}
+.hBg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 70% 60% at 78% 18%, #2c1240 0%, transparent 65%),
+    radial-gradient(ellipse 55% 75% at 18% 78%, #0e0820 0%, transparent 70%),
+    radial-gradient(ellipse 35% 35% at 90% 88%, #1a0a2a 0%, transparent 55%),
+    #08080c;
+}
+.hGrad{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,12,1) 0%,rgba(8,8,12,.5) 45%,rgba(8,8,12,.1) 100%);z-index:2;}
+.hCRT{position:absolute;inset:0;z-index:3;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.04) 0px,rgba(0,0,0,.04) 1px,transparent 1px,transparent 3px);}
+.hGrain{
+  position:absolute;inset:0;z-index:4;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size:256px 256px;opacity:.05;mix-blend-mode:overlay;
+}
+.heliStamp{position:absolute;top:50%;left:50%;transform:translate(-50%,-58%);z-index:5;pointer-events:none;width:clamp(280px,40vw,540px);height:clamp(280px,40vw,540px);opacity:.06;}
+.heliStamp svg{width:100%;height:100%;}
+.rotors{transform-origin:50% 50%;animation:spinRotor 7s linear infinite;}
+@keyframes spinRotor{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+
+.hContent{position:relative;z-index:10;padding:0 60px 80px;}
+.csTag{font-size:10px;letter-spacing:.38em;font-weight:500;color:var(--gold);text-transform:uppercase;margin-bottom:24px;display:block;}
+.hTitle{font-size:clamp(46px,8vw,118px);font-weight:700;line-height:.95;letter-spacing:.01em;margin-bottom:20px;max-width:1000px;}
+.hTitle em{font-style:italic;font-weight:300;background:var(--gG);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hSub{font-size:clamp(15px,1.5vw,19px);letter-spacing:.04em;color:rgba(255,255,255,.5);margin-bottom:38px;font-weight:300;max-width:560px;line-height:1.55;}
+.hMeta{display:flex;gap:48px;flex-wrap:wrap;}
+.hm span:first-child{font-size:9px;letter-spacing:.3em;color:rgba(255,255,255,.22);text-transform:uppercase;display:block;margin-bottom:4px;}
+.hm span:last-child{font-size:14px;font-weight:500;color:rgba(255,255,255,.7);letter-spacing:.06em;}
+
+.ch{max-width:1280px;margin:0 auto;padding:100px 60px;display:grid;grid-template-columns:200px 1fr;gap:80px;border-bottom:1px solid var(--line);position:relative;}
+@media (max-width:880px){.ch{grid-template-columns:1fr;gap:30px;}}
+#ch-brief{background:radial-gradient(ellipse 55% 80% at 88% 8%, #1c1430 0%, transparent 60%),radial-gradient(ellipse 40% 50% at 10% 90%, #0d0c14 0%, transparent 55%),#08080c;}
+#ch-approach{background:radial-gradient(ellipse 60% 70% at 85% 10%, #221038 0%, transparent 60%),radial-gradient(ellipse 35% 45% at 5% 85%, #100a18 0%, transparent 55%),#08080c;}
+#ch-pillars{background:radial-gradient(ellipse 50% 65% at 90% 5%, #161024 0%, transparent 55%),#08080c;}
+#ch-stages{background:radial-gradient(ellipse 50% 65% at 10% 8%, #1a1228 0%, transparent 55%),#08080c;}
+#ch-system{background:radial-gradient(ellipse 60% 70% at 50% 10%, #1c1030 0%, transparent 60%),#08080c;}
+#ch-close{background:radial-gradient(ellipse 50% 65% at 12% 10%, #14101e 0%, transparent 55%),#08080c;}
+
+.bgS{position:relative;overflow:hidden;min-height:560px;display:flex;align-items:center;}
+.bgS .ov{position:absolute;inset:0;z-index:1;}
+.bgS .cnt{position:relative;z-index:10;padding:100px 60px;max-width:680px;}
+.bgS .cnt.rgt{margin-left:auto;text-align:right;}
+.bgS .cnt.ctr{margin:0 auto;text-align:center;max-width:880px;}
+.bgS .lbl{font-size:9px;letter-spacing:.38em;font-weight:500;color:var(--gold);text-transform:uppercase;margin-bottom:20px;display:block;}
+.bgS h2{font-size:clamp(30px,3.8vw,54px);font-weight:700;line-height:1.06;letter-spacing:.02em;margin-bottom:22px;}
+.bgS h2 em{font-style:italic;font-weight:300;background:var(--gG);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.bgS p{font-size:17px;line-height:1.68;color:rgba(255,255,255,.62);font-weight:300;max-width:560px;}
+.bgS .cnt.ctr p{margin:0 auto;}
+#s-problem{background:radial-gradient(ellipse 65% 55% at 82% 12%, #2c1240 0%, transparent 55%),radial-gradient(ellipse 40% 60% at 15% 75%, #1a0a30 0%, transparent 60%),#08080c;}
+#s-line{background:radial-gradient(ellipse 70% 80% at 50% 50%, #24103a 0%, transparent 70%),#08080c;}
+
+.chLbl{font-size:9px;letter-spacing:.38em;font-weight:500;color:var(--gold);text-transform:uppercase;padding-top:6px;}
+.chTi{font-size:clamp(28px,3.2vw,44px);font-weight:700;line-height:1.08;letter-spacing:.02em;margin-bottom:28px;}
+.chTi em{font-style:italic;font-weight:300;background:var(--gG);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.chP{font-size:18px;line-height:1.7;color:var(--ash);font-weight:300;margin-bottom:18px;max-width:740px;}
+.chP strong{color:rgba(255,255,255,.85);font-weight:500;}
+
+.steps{display:flex;flex-direction:column;margin-top:36px;}
+.step{display:grid;grid-template-columns:56px 1fr;gap:24px;padding:26px 0;border-bottom:1px solid var(--line);}
+.stepN{font-size:10px;letter-spacing:.22em;color:var(--gold);font-weight:500;padding-top:4px;}
+.stepT{font-size:17px;font-weight:600;color:#fff;margin-bottom:6px;letter-spacing:.04em;}
+.stepB{font-size:15px;line-height:1.62;color:var(--ash);font-weight:300;}
+
+/* Pillars grid */
+.pillarGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:40px;}
+@media (max-width:880px){.pillarGrid{grid-template-columns:1fr;}}
+.pillar{background:rgba(8,8,12,.92);padding:34px 30px;position:relative;overflow:hidden;}
+.pillar::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 80% 80% at 85% 8%, rgba(140,90,180,0.1) 0%, transparent 65%);}
+.pillarN{font-size:9px;letter-spacing:.3em;color:var(--gold);font-weight:500;text-transform:uppercase;margin-bottom:14px;position:relative;}
+.pillarT{font-size:21px;font-weight:700;color:#fff;letter-spacing:.03em;margin-bottom:6px;position:relative;}
+.pillarRole{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px;position:relative;}
+.pillarLine{font-size:15px;font-style:italic;font-weight:300;color:var(--gold2);line-height:1.4;position:relative;}
+
+/* Stage funnel */
+.funnel{display:flex;flex-direction:column;margin-top:40px;gap:2px;}
+.fStage{display:grid;grid-template-columns:130px 1fr 1fr;gap:0;background:rgba(8,8,12,.9);border:1px solid var(--line);align-items:stretch;}
+@media (max-width:880px){.fStage{grid-template-columns:1fr;}}
+.fStageName{padding:24px 26px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--line);position:relative;overflow:hidden;}
+.fStageName::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold),transparent);}
+.fsN{font-size:9px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase;margin-bottom:5px;}
+.fsT{font-size:19px;font-weight:700;color:#fff;letter-spacing:.04em;}
+.fStageMid{padding:24px 26px;border-right:1px solid var(--line);}
+.fStageMid .fl{font-size:9px;letter-spacing:.22em;color:rgba(255,255,255,.28);text-transform:uppercase;margin-bottom:6px;}
+.fStageMid .fv{font-size:15px;color:rgba(255,255,255,.72);font-weight:400;font-style:italic;}
+.fStageR{padding:24px 26px;}
+.fStageR .fl{font-size:9px;letter-spacing:.22em;color:rgba(255,255,255,.28);text-transform:uppercase;margin-bottom:6px;}
+.fStageR .fv{font-size:15px;color:var(--ash);font-weight:300;}
+
+/* Interactive system */
+.sysWrap{margin-top:44px;}
+.sysRow{margin-bottom:30px;}
+.sysRowLbl{font-size:9px;letter-spacing:.32em;color:rgba(255,255,255,.35);text-transform:uppercase;margin-bottom:14px;display:block;}
+.sysBtns{display:flex;flex-wrap:wrap;gap:8px;}
+.sysBtn{
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;
+  color:rgba(255,255,255,.5);
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--line);
+  padding:13px 20px;cursor:none;
+  transition:color .2s,border-color .2s,background .2s;
+}
+.sysBtn:hover{color:rgba(255,255,255,.85);border-color:rgba(196,154,60,.3);}
+.sysBtn.active{
+  color:var(--ink);font-weight:600;
+  background:linear-gradient(90deg,#d4a038,#f0cc68,#d4a038);
+  border-color:transparent;
+}
+.sysOut{
+  margin-top:34px;border:1px solid rgba(196,154,60,.18);
+  background:rgba(8,8,12,.6);backdrop-filter:blur(8px);
+  min-height:240px;position:relative;
+}
+.sysOut::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.sysOutHead{padding:22px 30px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.sysOutCombo{font-size:13px;letter-spacing:.1em;color:rgba(255,255,255,.55);text-transform:uppercase;}
+.sysOutCombo b{color:var(--gold2);font-weight:600;}
+.sysOutRule{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.32);border:1px solid var(--line);padding:6px 12px;}
+.sysCards{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);}
+@media (max-width:760px){.sysCards{grid-template-columns:1fr;}}
+.sysCard{background:rgba(8,8,12,.92);padding:30px 28px;position:relative;overflow:hidden;}
+.sysCard::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 80% 80% at 85% 10%, rgba(140,90,180,0.09) 0%, transparent 65%);}
+.sysCardCtx{font-size:9px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase;margin-bottom:14px;position:relative;}
+.sysCardH{font-size:24px;font-weight:700;color:#fff;line-height:1.15;letter-spacing:.01em;margin-bottom:10px;position:relative;}
+.sysCardB{font-size:14px;line-height:1.55;color:var(--ash);font-weight:300;position:relative;}
+.sysCardB.none{color:rgba(255,255,255,.28);font-style:italic;}
+.sysEmpty{padding:54px 30px;text-align:center;}
+.sysEmpty p{font-size:15px;color:rgba(255,255,255,.4);font-weight:300;font-style:italic;max-width:480px;margin:0 auto;line-height:1.6;}
+
+/* stat row */
+.statsRow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:48px;}
+@media (max-width:880px){.statsRow{grid-template-columns:1fr 1fr;}}
+.st{background:rgba(8,8,12,.9);padding:36px 30px;position:relative;overflow:hidden;}
+.st::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 90% 90% at 85% 5%, rgba(196,154,60,0.07) 0%, transparent 60%);pointer-events:none;}
+.stN{font-size:46px;font-weight:700;background:var(--gG);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:8px;position:relative;}
+.stL{font-size:11px;letter-spacing:.18em;color:var(--ash);text-transform:uppercase;font-weight:300;position:relative;}
+
+/* universal line block */
+.lineBig{font-size:clamp(56px,11vw,168px);font-weight:700;line-height:.92;letter-spacing:.01em;}
+.lineBig em{font-style:italic;font-weight:300;background:var(--gG);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+
+/* share + next */
+.shareBar{max-width:1280px;margin:0 auto;padding:90px 60px 50px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;}
+.sbLbl{font-size:9px;letter-spacing:.38em;color:var(--gold);font-weight:500;text-transform:uppercase;margin-bottom:10px;display:block;}
+.sbTi{font-size:clamp(22px,2.6vw,32px);font-weight:700;letter-spacing:.02em;line-height:1.15;}
+.sbTi em{font-style:italic;font-weight:300;background:var(--gG);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.shareBtn{display:inline-flex;align-items:center;gap:12px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--ink);background:linear-gradient(90deg,#a87028,#d4a038,#f0cc68,#d4a038,#a87028);background-size:200%;padding:16px 28px;cursor:none;border:none;transition:background-position .4s,box-shadow .25s;text-decoration:none;}
+.shareBtn:hover{background-position:100%;box-shadow:0 0 32px rgba(196,154,60,.3);}
+.shareBtn svg{width:18px;height:18px;}
+.nextS{padding:100px 60px;max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;}
+.ncL{font-size:10px;letter-spacing:.32em;color:rgba(255,255,255,.2);text-transform:uppercase;margin-bottom:12px;}
+.ncT{font-size:clamp(22px,2.6vw,36px);font-weight:700;letter-spacing:.03em;}
+.ncBtn{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--ink);background:linear-gradient(90deg,#a87028,#d4a038,#f0cc68,#d4a038,#a87028);background-size:200%;border:none;padding:16px 36px;cursor:none;transition:background-position .4s,box-shadow .25s;text-decoration:none;display:inline-block;}
+.ncBtn:hover{background-position:100%;box-shadow:0 0 32px rgba(196,154,60,.3);}
+
+.rule{width:100%;height:1px;background:var(--line);}
+footer{border-top:1px solid var(--line);padding:36px 60px;display:flex;align-items:center;justify-content:space-between;}
+footer p{font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.18);text-transform:uppercase;}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .85s ease,transform .85s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<div id="cW">
+  <svg id="cS" viewBox="0 0 28 44" fill="none">
+    <defs>
+      <linearGradient id="bG" x1="14" y1="0" x2="14" y2="44" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#fff4c0"/><stop offset="30%" stop-color="#f0cc68"/>
+        <stop offset="65%" stop-color="#d4a038"/><stop offset="100%" stop-color="#a87028"/>
+      </linearGradient>
+      <filter id="gl" x="-60%" y="-30%" width="220%" height="160%">
+        <feGaussianBlur stdDeviation="2.5" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <polygon points="18,1 5,20 13,20 10,43 23,18 15,18" fill="url(#bG)" filter="url(#gl)"/>
+  </svg>
+</div>
+<div id="cR"></div>
+
+<nav>
+  <a href="index.html" class="nBack">All Work</a>
+  <a href="index.html" class="nLogo">Thunderads</a>
+</nav>
+
+<section id="hero" class="grained">
+  <div class="hBg"></div>
+  <div class="hGrad"></div>
+  <div class="hCRT"></div>
+  <div class="hGrain"></div>
+  <div class="heliStamp">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="rotG" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#a87028"/><stop offset="50%" stop-color="#f0cc68"/><stop offset="100%" stop-color="#a87028"/></linearGradient></defs>
+      <circle cx="100" cy="100" r="98" fill="none" stroke="url(#rotG)" stroke-width="0.6" opacity="0.4"/>
+      <circle cx="100" cy="100" r="78" fill="none" stroke="url(#rotG)" stroke-width="0.4" opacity="0.3"/>
+      <g class="rotors">
+        <rect x="98" y="6" width="4" height="188" fill="url(#rotG)" rx="2"/>
+        <rect x="6" y="98" width="188" height="4" fill="url(#rotG)" rx="2"/>
+      </g>
+      <circle cx="100" cy="100" r="6" fill="url(#rotG)"/>
+    </svg>
+  </div>
+  <div class="hContent reveal">
+    <span class="csTag">Case Study · Brand Platform & Communication Architecture · Hoper Aviation · 2026</span>
+    <h1 class="hTitle">Don't go.<br><em>Fly.</em></h1>
+    <p class="hSub">Hoper isn't one product. It's six. We built the brand platform that writes the right line every time.</p>
+    <div class="hMeta">
+      <div class="hm"><span>Client</span><span>Hoper Aviation</span></div>
+      <div class="hm"><span>Scope</span><span>Brand Platform · Messaging Architecture</span></div>
+      <div class="hm"><span>The System</span><span>Pillar × Stage × Context</span></div>
+      <div class="hm"><span>Span</span><span>6 Pillars · 5 Stages · 8 Contexts</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="ch reveal" id="ch-brief">
+  <div class="chLbl">The Brief</div>
+  <div>
+    <h2 class="chTi">Hoper is six businesses <em>wearing one logo.</em></h2>
+    <p class="chP">Hoper started as helicopter transfers. It's becoming something much bigger: a search-and-compare platform, scheduled point-to-point flights, aerial experiences, private charter, and routes that don't exist anywhere else. <strong>Six products. Six different problems. One brand.</strong></p>
+    <p class="chP">The brief wasn't a campaign. It was the layer underneath every campaign: a communication architecture that lets one brand sell six things without ever sounding confused, generic, or off-pillar.</p>
+  </div>
+</div>
+
+<section class="bgS reveal grained" id="s-problem">
+  <div class="ov" style="background:linear-gradient(105deg,rgba(8,8,12,.97) 0%,rgba(8,8,12,.55) 55%,rgba(8,8,12,.12) 100%);"></div>
+  <div class="cnt">
+    <span class="lbl">The Problem</span>
+    <h2>One message can't sell<br><em>six products.</em></h2>
+    <p>Most travel brands pick one line and repeat it. Hoper couldn't. A ferry-replacement message aimed at a private charter buyer is noise. A price-led message shown to someone who doesn't know helicopters are an option is wasted spend. Same brand, same week, six audiences, five mindsets, eight places they could be standing. Repetition wasn't an option. The brand needed a system.</p>
+  </div>
+</section>
+
+<div class="ch reveal" id="ch-approach">
+  <div class="chLbl">The Approach</div>
+  <div>
+    <h2 class="chTi">Every execution answers <em>three questions.</em></h2>
+    <p class="chP">We built the brand around a single rule. Before any line is written, any visual is briefed, any euro is spent, the execution has to answer three things. Get all three right and the message is automatically on-brand, on-funnel, and in-context.</p>
+    <div class="steps">
+      <div class="step"><span class="stepN">01</span><div><div class="stepT">Pillar. What are we selling?</div><div class="stepB">Six product pillars, each solving a different problem: Search/OTA, Scheduled, Experiences, Private, Special Routes, and the Universal brand layer. Pillars never mix inside one execution. Ever.</div></div></div>
+      <div class="step"><span class="stepN">02</span><div><div class="stepT">Stage. What is the user thinking?</div><div class="stepB">A five-step funnel of mindset: Interrupt, Reframe, Simplify, Convert, Normalize. The stage decides how much you say. Top of funnel carries no price and no CTA. Only Convert is allowed to ask for the sale.</div></div></div>
+      <div class="step"><span class="stepN">03</span><div><div class="stepT">Context. Where are they standing?</div><div class="stepB">Port, Airport, City, Island, Search, Social, Retargeting, CRM. Context turns a generic line into an instantly relevant one. "Skip the ferry" lands at a port. It's invisible anywhere else.</div></div></div>
+      <div class="step"><span class="stepN">04</span><div><div class="stepT">The persona sets the angle, not the line</div><div class="stepB">Time-sensitive wants speed. Explorer wants the view. Planner wants clarity. Premium wants control. Same route, four motivations. Persona tunes the angle inside the pillar; it never overrides the system.</div></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="ch reveal" id="ch-pillars">
+  <div class="chLbl">The Pillars</div>
+  <div>
+    <h2 class="chTi">Six products. <em>Six voices that never blur.</em></h2>
+    <p class="chP">Each pillar owns a problem and a tone. The rule on every brief: one pillar per execution, no exceptions.</p>
+    <div class="pillarGrid">
+      <div class="pillar"><p class="pillarN">Pillar 01</p><p class="pillarT">Search / OTA</p><p class="pillarRole">Discovery · Comparison · Clarity</p><p class="pillarLine">"Find your way to fly."</p></div>
+      <div class="pillar"><p class="pillarN">Pillar 02</p><p class="pillarT">Scheduled</p><p class="pillarRole">Point-to-point · Speed</p><p class="pillarLine">"Skip the ferry. Fly."</p></div>
+      <div class="pillar"><p class="pillarN">Pillar 03</p><p class="pillarT">Experiences</p><p class="pillarRole">Tours · Aerial Views · Emotion</p><p class="pillarLine">"See it differently. Fly."</p></div>
+      <div class="pillar"><p class="pillarN">Pillar 04</p><p class="pillarT">Private</p><p class="pillarRole">Premium · Charter · Control</p><p class="pillarLine">"Fly on your own terms."</p></div>
+      <div class="pillar"><p class="pillarN">Pillar 05</p><p class="pillarT">Special Routes</p><p class="pillarRole">Hard-to-reach · Access</p><p class="pillarLine">"Some routes don't exist. Until they do."</p></div>
+      <div class="pillar"><p class="pillarN">Pillar 06</p><p class="pillarT">Universal</p><p class="pillarRole">Brand Level</p><p class="pillarLine">"Don't go. Fly."</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="ch reveal" id="ch-stages">
+  <div class="chLbl">The Funnel</div>
+  <div>
+    <h2 class="chTi">Same person. Different moment. <em>Different message.</em></h2>
+    <p class="chP">Five stages of mindset. Each one decides how much the execution is allowed to say. We move people one step at a time, never skipping.</p>
+    <div class="funnel">
+      <div class="fStage"><div class="fStageName"><span class="fsN">Stage 01</span><span class="fsT">Interrupt</span></div><div class="fStageMid"><span class="fl">User thinks</span><span class="fv">"Wait… what?"</span></div><div class="fStageR"><span class="fl">We do</span><span class="fv">Break the pattern. Headline only, no price, no CTA.</span></div></div>
+      <div class="fStage"><div class="fStageName"><span class="fsN">Stage 02</span><span class="fsT">Reframe</span></div><div class="fStageMid"><span class="fl">User thinks</span><span class="fv">"That's smarter."</span></div><div class="fStageR"><span class="fl">We do</span><span class="fv">Change the perception. Headline plus contrast.</span></div></div>
+      <div class="fStage"><div class="fStageName"><span class="fsN">Stage 03</span><span class="fsT">Simplify</span></div><div class="fStageMid"><span class="fl">User thinks</span><span class="fv">"I get it."</span></div><div class="fStageR"><span class="fl">We do</span><span class="fv">Remove complexity. Route plus duration, still no price.</span></div></div>
+      <div class="fStage"><div class="fStageName"><span class="fsN">Stage 04</span><span class="fsT">Convert</span></div><div class="fStageMid"><span class="fl">User thinks</span><span class="fv">"I'll do it."</span></div><div class="fStageR"><span class="fl">We do</span><span class="fv">Trigger action. The only stage allowed price and a CTA.</span></div></div>
+      <div class="fStage"><div class="fStageName"><span class="fsN">Stage 05</span><span class="fsT">Normalize</span></div><div class="fStageMid"><span class="fl">User thinks</span><span class="fv">"I'll do it again."</span></div><div class="fStageR"><span class="fl">We do</span><span class="fv">Build the habit. Identity only, brand over offer.</span></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="ch reveal" id="ch-system">
+  <div class="chLbl">The System, Live</div>
+  <div>
+    <h2 class="chTi">Pick a pillar. Pick a stage. <em>Watch the brand answer.</em></h2>
+    <p class="chP">This is the actual 2026 messaging matrix. Choose what you're selling and what the user is thinking, and the system returns the real, briefed copy, by context, with the funnel rule it has to obey.</p>
+    <div class="sysWrap">
+      <div class="sysRow">
+        <span class="sysRowLbl">01 · Pillar · What are we selling?</span>
+        <div class="sysBtns" id="pillarBtns"></div>
+      </div>
+      <div class="sysRow">
+        <span class="sysRowLbl">02 · Stage · What is the user thinking?</span>
+        <div class="sysBtns" id="stageBtns"></div>
+      </div>
+      <div class="sysOut" id="sysOut">
+        <div class="sysOutHead">
+          <span class="sysOutCombo" id="sysCombo">Select a pillar and a stage</span>
+          <span class="sysOutRule" id="sysRule">Funnel rule</span>
+        </div>
+        <div id="sysBody"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="bgS reveal grained" id="s-line">
+  <div class="ov" style="background:rgba(8,8,12,.55);"></div>
+  <div class="cnt ctr">
+    <span class="lbl">The Universal Line</span>
+    <p class="lineBig">Don't go.<br><em>Fly.</em></p>
+    <p style="margin-top:30px;max-width:560px;">Three words sit above the entire system. Whatever the pillar, whatever the stage, whatever the context, every execution ladders back to one idea: the old way of getting there was never the only way.</p>
+  </div>
+</section>
+
+<div class="ch reveal" id="ch-close">
+  <div class="chLbl">Why It Matters</div>
+  <div>
+    <h2 class="chTi">A campaign runs out. <em>A system compounds.</em></h2>
+    <p class="chP">The deliverable wasn't a set of ads. It was the architecture that makes every future ad correct by default. New routes, new destinations, new pillars slot in without a rebrief. A media buyer, a designer, and a copywriter who have never met can each open the matrix and produce work that is unmistakably Hoper.</p>
+    <p class="chP"><strong>Right message. Right moment. Right product.</strong> Not as a slogan, as a system that enforces it.</p>
+    <div class="statsRow">
+      <div class="st"><p class="stN">6</p><p class="stL">Product pillars</p></div>
+      <div class="st"><p class="stN">5</p><p class="stL">Funnel stages</p></div>
+      <div class="st"><p class="stN">8</p><p class="stL">Targetable contexts</p></div>
+      <div class="st"><p class="stN">1</p><p class="stL">Coherent brand</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="rule"></div>
+<div class="shareBar reveal">
+  <div class="sbL">
+    <span class="sbLbl">Brand That Scales?</span>
+    <p class="sbTi">Send it to <em>a founder.</em></p>
+  </div>
+  <a class="shareBtn" href="#" onclick="event.preventDefault();window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(window.location.href),'_blank','width=600,height=600,noopener,noreferrer');">
+    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.5 17V10H6v7h2.5zM7.2 8.8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM18 17v-3.9c0-2.3-1.3-3.3-3-3.3-1.4 0-2 .8-2.4 1.3V10H10v7h2.5v-3.7c0-1 .2-2 1.4-2s1.2.9 1.2 2V17H18z"/></svg>
+    Share on LinkedIn
+  </a>
+</div>
+<div class="rule"></div>
+<div class="nextS reveal">
+  <div>
+    <p class="ncL">Next Case Study</p>
+    <p class="ncT">Hoper · By Helicopter · Gold Ermis 2025</p>
+  </div>
+  <a href="hoper-radio-case-study.html" class="ncBtn">View Case Study →</a>
+</div>
+<div class="rule"></div>
+
+<footer>
+  <p>Thunderads · Athens · Est. 2013</p>
+  <p>© 2025 All rights reserved</p>
+</footer>
+
+<script>
+const cW=document.getElementById('cW'),cR=document.getElementById('cR');
+let mx=0,my=0,rx=0,ry=0;
+window.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+(function tk(){
+  cW.style.left=mx+'px';cW.style.top=my+'px';
+  rx+=(mx-rx)*0.1;ry+=(my-ry)*0.1;
+  cR.style.left=rx+'px';cR.style.top=ry+'px';
+  requestAnimationFrame(tk);
+})();
+
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');obs.unobserve(x.target);}});
+},{threshold:0.07});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// ── The Message System ──
+const STAGE_RULE={
+  Interrupt:"No price · No CTA · Headline only",
+  Reframe:"No price · No CTA · Headline + contrast",
+  Simplify:"No price · No CTA · Route + duration",
+  Convert:"Price + CTA allowed · Convert only",
+  Normalize:"No price · Identity only"
+};
+const SYSTEM={
+  "Scheduled":{
+    Interrupt:[
+      {ctx:"Port",h:"Skip the ferry. Fly.",b:""},
+      {ctx:"Social",h:"Don't go to Santorini.",b:""},
+      {ctx:"Airport",h:"Don't wait. Fly.",b:""},
+      {ctx:"City",h:"Don't sit in traffic. Fly.",b:""}
+    ],
+    Reframe:[
+      {ctx:"Port",h:"Same island. Different choice.",b:"The ferry takes hours."},
+      {ctx:"Social",h:"Don't go there. Fly in minutes.",b:""},
+      {ctx:"Airport",h:"The gate is a waste of time. Fly.",b:""},
+      {ctx:"City",h:"4 hours by road. 35 min by air.",b:""}
+    ],
+    Simplify:[
+      {ctx:"Port",h:"Athens → Mykonos. 35'",b:"No ferry. No wait."},
+      {ctx:"Social",h:"Athens → Mykonos. 35'",b:"Not hours. Minutes."}
+    ],
+    Convert:[
+      {ctx:"Port / Retargeting",h:"Fly to Mykonos from 170€.",b:"Book your seat."},
+      {ctx:"Airport",h:"35 min. From 170€. Book now.",b:""},
+      {ctx:"City",h:"45 min. From 170€. Book now.",b:""}
+    ],
+    Normalize:[
+      {ctx:"CRM",h:"Don't go. Fly Hoper.",b:"Every time."}
+    ]
+  },
+  "Search / OTA":{
+    Interrupt:[
+      {ctx:"Search",h:"Don't search everywhere.",b:""}
+    ],
+    Reframe:[
+      {ctx:"Search",h:"Stop searching. Start flying.",b:"Every helicopter route. One place."}
+    ],
+    Simplify:[
+      {ctx:"Search",h:"Santorini. Mykonos. The Alps. Cannes.",b:"All your options. One place."}
+    ],
+    Convert:[
+      {ctx:"Retargeting",h:"Compare helicopter flights.",b:"Find your route."}
+    ],
+    Normalize:[
+      {ctx:"CRM",h:"Where are you flying next?",b:"Discover routes."}
+    ]
+  },
+  "Experiences":{
+    Interrupt:[
+      {ctx:"Social",h:"Haven't seen it yet?",b:""},
+      {ctx:"Island",h:"Skip the donkey. Fly.",b:""},
+      {ctx:"Island",h:"Where next. Fly.",b:""}
+    ],
+    Reframe:[
+      {ctx:"Social",h:"Didn't see it? Fly over it.",b:"Same island, different world."}
+    ],
+    Simplify:[
+      {ctx:"Social",h:"Santorini from above. 30'",b:"No ferry. Just sky."},
+      {ctx:"Island",h:"Mykonos → Santorini. 20'",b:""}
+    ],
+    Convert:[
+      {ctx:"Retargeting",h:"Santorini from above. 220€.",b:"90-minute aerial experience. Book your tour."},
+      {ctx:"Island",h:"20 min. From 290€. Book now.",b:""}
+    ],
+    Normalize:[
+      {ctx:"CRM",h:"You've seen it from above. See the next one.",b:"Explore routes."}
+    ]
+  },
+  "Private":{
+    Interrupt:[
+      {ctx:"Social",h:"Don't wait for a seat.",b:""}
+    ],
+    Reframe:[
+      {ctx:"Social",h:"Fly on your own terms.",b:"No schedules. No terminals. No waiting."},
+      {ctx:"Social",h:"Don't adjust your plans. Fly.",b:"Your schedule. Your aircraft. Your route."},
+      {ctx:"Social · Typography",h:"No schedules. Just fly.",b:""}
+    ],
+    Simplify:[
+      {ctx:"Social",h:"Athens → Mykonos. Your time.",b:""},
+      {ctx:"Display",h:"Nice → Monaco. 7'",b:""}
+    ],
+    Convert:[
+      {ctx:"Retargeting",h:"Private charter. Athens → Mykonos.",b:"Request your quote. Instant confirmation."}
+    ],
+    Normalize:[
+      {ctx:"CRM",h:"Your next escape, ready.",b:"Whenever you need it."}
+    ]
+  },
+  "Special Routes":{
+    Interrupt:[
+      {ctx:"Social",h:"Don't go the usual way.",b:""}
+    ],
+    Reframe:[
+      {ctx:"Social",h:"Don't go there. Fly there instead.",b:"Routes you won't find anywhere else."}
+    ],
+    Simplify:[
+      {ctx:"Social",h:"Mykonos → Folegandros. 25'",b:""}
+    ],
+    Convert:[
+      {ctx:"Retargeting",h:"Fly to Folegandros. From 280€.",b:"Limited seats. Book before it's gone."}
+    ],
+    Normalize:[
+      {ctx:"CRM",h:"More places. Only on Hoper.",b:"See new routes."}
+    ]
+  },
+  "Universal":{
+    Interrupt:[{ctx:"Any",h:"Don't go. Fly.",b:""}],
+    Reframe:[{ctx:"Any",h:"Don't go. Fly.",b:"The old way was never the only way."}],
+    Simplify:[{ctx:"Any",h:"Don't go. Fly.",b:"Athens → Mykonos. 35 minutes."}],
+    Convert:[{ctx:"Any",h:"Don't go. Fly Hoper.",b:"Book your seat."}],
+    Normalize:[{ctx:"CRM",h:"Don't go. Fly Hoper.",b:"Every time."}]
+  }
+};
+const PILLARS=["Scheduled","Search / OTA","Experiences","Private","Special Routes","Universal"];
+const STAGES=["Interrupt","Reframe","Simplify","Convert","Normalize"];
+let curPillar=null,curStage=null;
+
+function buildBtns(){
+  const pb=document.getElementById('pillarBtns'),sb=document.getElementById('stageBtns');
+  PILLARS.forEach(p=>{
+    const b=document.createElement('button');
+    b.className='sysBtn';b.textContent=p;b.dataset.p=p;
+    b.addEventListener('click',()=>{curPillar=p;sync();});
+    pb.appendChild(b);
+  });
+  STAGES.forEach(s=>{
+    const b=document.createElement('button');
+    b.className='sysBtn';b.textContent=s;b.dataset.s=s;
+    b.addEventListener('click',()=>{curStage=s;sync();});
+    sb.appendChild(b);
+  });
+}
+function sync(){
+  document.querySelectorAll('#pillarBtns .sysBtn').forEach(b=>b.classList.toggle('active',b.dataset.p===curPillar));
+  document.querySelectorAll('#stageBtns .sysBtn').forEach(b=>b.classList.toggle('active',b.dataset.s===curStage));
+  render();
+}
+function render(){
+  const combo=document.getElementById('sysCombo'),rule=document.getElementById('sysRule'),body=document.getElementById('sysBody');
+  if(!curPillar||!curStage){
+    combo.innerHTML='Select a pillar and a stage';
+    rule.textContent='Funnel rule';
+    body.innerHTML='<div class="sysEmpty"><p>The system writes nothing until it knows what you are selling and what the user is thinking. Pick one of each above.</p></div>';
+    return;
+  }
+  combo.innerHTML='<b>'+curPillar+'</b> &nbsp;×&nbsp; <b>'+curStage+'</b>';
+  rule.textContent=STAGE_RULE[curStage];
+  const cell=(SYSTEM[curPillar]||{})[curStage]||[];
+  if(!cell.length){
+    body.innerHTML='<div class="sysEmpty"><p>No execution briefed for this combination. The system only writes what the funnel needs, empty cells are a feature, not a gap.</p></div>';
+    return;
+  }
+  let html='<div class="sysCards">';
+  cell.forEach(c=>{
+    html+='<div class="sysCard"><p class="sysCardCtx">Context · '+c.ctx+'</p><p class="sysCardH">'+c.h+'</p>'+
+      (c.b?'<p class="sysCardB">'+c.b+'</p>':'<p class="sysCardB none">No supporting line. The stage forbids it.</p>')+'</div>';
+  });
+  html+='</div>';
+  body.innerHTML=html;
+}
+buildBtns();
+render();
+</script>
+</body>
+</html>
